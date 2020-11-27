@@ -2,9 +2,12 @@ package com.aditya.downloadingfiles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -99,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
         Log.i("result",result);
         Toast.makeText(this,result,Toast.LENGTH_SHORT).show();
         textView.setText(result);
+        Button button = (Button)findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Activity2.class);
+                startActivity(intent);
+            }
+        });
     }
 
     }
